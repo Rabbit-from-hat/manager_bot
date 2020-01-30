@@ -22,7 +22,7 @@ async def on_ready():
 # 参加時
 @bot.event
 async def on_member_join(member):
-    CHANNEL_ID = 615033034609131529
+    CHANNEL_ID = 448692957848141824
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(str(member.mention)+'\n'
                        +str(member.display_name)+'さん！当サーバにようこそ！\n'
@@ -44,7 +44,7 @@ async def on_member_join(member):
 # 退出時
 @bot.event
 async def on_member_remove(member):
-    CHANNEL_ID = 615033034609131529
+    CHANNEL_ID = 448692957848141824
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(str(member.display_name)+'さんが、サーバから退出しました。')
 
