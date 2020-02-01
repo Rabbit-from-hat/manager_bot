@@ -40,12 +40,15 @@ async def on_member_join(member):
                        +'【注意点】\n'
                        +'当サーバの通知は、どのチャンネルも全通知となっております。\n'
                        +'お手数ですが、非通知の設定は適宜お願いいたします。')
+    REPORT_CANNEL_ID = 673165147891695616
+    channel = bot.get_channel(REPORT_CANNEL_ID)
+    await channel.send(str(member.display_name)+'さんが、サーバから入室しました。')
 
 # 退出時
 @bot.event
 async def on_member_remove(member):
-    CHANNEL_ID = 448692957848141824
-    channel = bot.get_channel(CHANNEL_ID)
+    REPORT_CANNEL_ID = 673165147891695616
+    channel = bot.get_channel(REPORT_CANNEL_ID)
     await channel.send(str(member.display_name)+'さんが、サーバから退出しました。')
 
 """VC参加メンバー全員宛てのメンション作成"""
