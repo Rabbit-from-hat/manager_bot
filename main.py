@@ -49,16 +49,18 @@ async def on_member_remove(member):
     await channel.send(str(member.display_name)+'さんが、サーバから退出しました。')
 
 """VC参加メンバー全員宛てのメンション作成"""
-@bot.event
-async def on_voice_state_update(member, before, after):
-    if not before.channel and after.channel:
-        set_mention_name = after.channel.name
-        role = discord.utils.get(member.guild.roles, name=set_mention_name)
-        await member.add_roles(role)
-    elif before.channel and not after.channel:
-        remove_mention_name = before.channel.name
-        role = discord.utils.get(member.guild.roles, name=remove_mention_name)
-        await member.remove_roles(role)
+# ちょっとした不具合があるため、使用を停止
+# 理由 => https://rabbitfromhat.qrunch.io/entries/uxQNABJJQr4wXTNI
+#@bot.event
+#async def on_voice_state_update(member, before, after):
+#    if not before.channel and after.channel:
+#        set_mention_name = after.channel.name
+#        role = discord.utils.get(member.guild.roles, name=set_mention_name)
+#        await member.add_roles(role)
+#    elif before.channel and not after.channel:
+#        remove_mention_name = before.channel.name
+#        role = discord.utils.get(member.guild.roles, name=remove_mention_name)
+#        await member.remove_roles(role)
 
 """コマンド実行"""
 # メンバー数が均等になるチーム分け(未指定時、デフォルトで2)
