@@ -42,7 +42,7 @@ async def on_member_join(member):
                        +'お手数ですが、非通知の設定は適宜お願いいたします。')
     REPORT_CANNEL_ID = 673165147891695616
     channel = bot.get_channel(REPORT_CANNEL_ID)
-    await channel.send(str(member.display_name)+'さんが、サーバから入室しました。')
+    await channel.send(str(member.display_name)+'さんが、サーバに入室しました。')
 
 # 退出時
 @bot.event
