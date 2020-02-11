@@ -27,7 +27,7 @@ async def on_member_join(member):
     await channel.send(str(member.mention)+'\n'
                        +str(member.display_name)+'さん！当サーバにようこそ！\n'
                        +'以下の対応をお願いします。\n'
-                       +'【対応内容】'
+                       +'【対応内容】\n'
                        +'・「id置き場」に適宜idの記載\n'
                        +'・「サーバのルール」の一読\n'
                        +'【注意点】\n'
