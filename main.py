@@ -22,6 +22,7 @@ async def on_ready():
 # 参加時
 @bot.event
 async def on_member_join(member):
+    # ロビーチャンネルへ送付
     CHANNEL_ID = 448692957848141824
     channel = bot.get_channel(CHANNEL_ID)
     await channel.send(str(member.mention)+'\n'
@@ -33,13 +34,20 @@ async def on_member_join(member):
                        +'【注意点】\n'
                        +'当サーバの通知は、どのチャンネルも全通知となっております。\n'
                        +'お手数ですが、非通知の設定は適宜お願いいたします。')
+    
+    # 管理者用チャンネルへメッセージ送付
     REPORT_CANNEL_ID = 673165147891695616
     channel = bot.get_channel(REPORT_CANNEL_ID)
     await channel.send(str(member.display_name)+'さんが、サーバに入室しました。')
 
+    # ロール付与
+    role = discord.utils.get(member.guild.roles, name="部員")
+    await member.add_roles(role)
+
 # 退出時
 @bot.event
 async def on_member_remove(member):
+    # 管理者用チャンネルへメッセージ送付
     REPORT_CANNEL_ID = 673165147891695616
     channel = bot.get_channel(REPORT_CANNEL_ID)
     await channel.send(str(member.display_name)+'さんが、サーバから退出しました。')
