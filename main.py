@@ -6,6 +6,9 @@ from discord.ext import commands
 
 from modules.grouping import MakeTeam
 
+# Intentsの有効化
+intents=discord.Intents.all()
+
 token = os.environ['DISCORD_BOT_TOKEN']
 bot = commands.Bot(command_prefix='/')
 
