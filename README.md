@@ -13,7 +13,7 @@ discordのサーバ「社会人ゲーム部」用のbot
 # Requirement
 
 * Python 3.8.1
-* discord.py 1.3.4
+* discord.py 1.5.1
 
 # Usage
 `/team [チーム数]`  
