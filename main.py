@@ -10,7 +10,7 @@ from modules.grouping import MakeTeam
 intents = discord.Intents.all()
 
 token = os.environ['DISCORD_BOT_TOKEN']
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix='/', intents=intents)
 
 """起動処理"""
 @bot.event
